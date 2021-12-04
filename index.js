@@ -37,6 +37,23 @@ export function calculateNumberOfIncreasedWindows(depths) {
 // Day2
 
 export function calculateFinalDepth(depths) {
-    let result = 0;
-    return result
+    let x = 0;
+    let y = 0;
+    //split depths by new line and split each line by space
+    depths.split('\n')
+        //forEach was used to signify that it will only change values of x and y rather than creating a new array with changed output like map
+        .forEach(ele => {
+            let num = Number(ele.split(" ")[1]);
+            let operation = ele.split(" ")[0];
+            //convert forward to +, which becomes x using IF statement rather than SWITCH statement(personal opinion :p)
+            if (operation == "forward") {
+                x += num;
+            } else if (operation == "up") {
+                y -= num;
+            } else {
+                y += num;
+            }
+        })
+    //multiply x y
+    return x * y
 }
