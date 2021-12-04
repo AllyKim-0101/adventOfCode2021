@@ -1,6 +1,6 @@
-import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows } from ".";
+import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth } from ".";
 
-
+//day 1
 describe('day one', () => {
     let depths = `199
 200
@@ -20,5 +20,19 @@ describe('day one', () => {
     test('part 2', () => {
         let result = calculateNumberOfIncreasedWindows(depths);
         expect(result).toEqual(5)
+    })
+});
+//day 2
+describe('day two', () => {
+    let depths = `forward 5
+down 5
+forward 8
+up 3
+down 8
+forward 2`
+
+    test('part1', () => {
+        let result = calculateFinalDepth(depths);
+        expect(result).toEqual(150)
     })
 })

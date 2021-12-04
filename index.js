@@ -33,3 +33,10 @@ export function calculateNumberOfIncreasedWindows(depths) {
     //if the current one is bigger than the previous one then return true to count
     return arr.filter((ele, index) => ele > arr[index - 1]).length
 }
+
+// Day2
+
+export function calculateFinalDepth(depths) {
+    let result = 0;
+    return result
+}

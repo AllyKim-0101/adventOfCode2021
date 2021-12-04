@@ -1,4 +1,4 @@
-import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows } from "./index.js";
+import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth } from "./index.js";
 import fs from 'fs';
 let depths = fs.readFileSync('day1.txt', 'utf8');
 
