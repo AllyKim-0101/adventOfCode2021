@@ -1,4 +1,4 @@
-import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth } from ".";
+import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth, calculateFinalDepthWithAim } from ".";
 
 //day 1
 describe('day one', () => {
@@ -34,5 +34,10 @@ forward 2`
     test('part1', () => {
         let result = calculateFinalDepth(depths);
         expect(result).toEqual(150)
+    })
+
+    test('part2', () => {
+        let result = calculateFinalDepthWithAim(depths);
+        expect(result).toEqual(900)
     })
 })

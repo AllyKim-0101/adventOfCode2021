@@ -57,3 +57,26 @@ export function calculateFinalDepth(depths) {
     //multiply x y
     return x * y
 }
+
+
+export function calculateFinalDepthWithAim(depths) {
+    let x = 0;
+    let y = 0;
+    let aim = 0;
+    depths.split('\n')
+        //forEach was used to signify that it will only change values of x and y rather than creating a new array with changed output like map
+        .forEach(ele => {
+            let num = Number(ele.split(" ")[1]);
+            let operation = ele.split(" ")[0];
+            //convert forward to +, which becomes x using IF statement rather than SWITCH statement(personal opinion :p)
+            if (operation == "forward") {
+                x += num;
+                y += (aim * num)
+            } else if (operation == "up") {
+                aim -= num;
+            } else {
+                aim += num;
+            }
+        })
+    return x * y
+}
