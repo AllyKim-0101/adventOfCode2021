@@ -80,3 +80,37 @@ export function calculateFinalDepthWithAim(depths) {
         })
     return x * y
 }
+
+//Day 3
+
+export const calculateFrequency = (array) => {
+    const result = {};
+    array.forEach(element => {
+        if (element in result) {
+            result[element] += 1
+        } else {
+            result[element] = 1
+        }
+    });
+    return result;
+}
+
+export function calculatePowerConsumption(bits) {
+    const bitsArr = bits.split('\n');
+    const mostFrequent = [];
+    const leastFrequent = [];
+    for (let i = 0; i < 12; i++) {
+        const col = bitsArr.map(ele => ele[i]);
+        const frequncy = calculateFrequency(col);
+        const mostFrequentBitOfCol = Object.entries(frequncy)
+            .sort(([, a], [, b]) => a - b)[1][0];
+
+        const leastFrequentBitOfCol = Object.entries(frequncy)
+            .sort(([, a], [, b]) => a - b)[0][0];
+        mostFrequent.push(mostFrequentBitOfCol);
+        leastFrequent.push(leastFrequentBitOfCol);
+    }
+    const gamma = parseInt(mostFrequent.map(Number).join(''), 2);
+    const epsilon = parseInt(leastFrequent.map(Number).join(''), 2);
+    return gamma * epsilon;
+}

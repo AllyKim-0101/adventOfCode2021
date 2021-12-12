@@ -1,4 +1,7 @@
-import { calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth, calculateFinalDepthWithAim } from ".";
+import {
+    calculateNumberOfIncreasedDepth, calculateNumberOfIncreasedWindows, calculateFinalDepth, calculateFinalDepthWithAim, calculatePowerConsumption
+    , calculateFrequency
+} from ".";
 
 //day 1
 describe('day one', () => {
@@ -39,5 +42,33 @@ forward 2`
     test('part2', () => {
         let result = calculateFinalDepthWithAim(depths);
         expect(result).toEqual(900)
+    })
+})
+
+//day3
+describe('day three', () => {
+    let bits = `00100
+11110
+10110
+10111
+10101
+01111
+00111
+11100
+10000
+11001
+00010
+01010`
+
+    test(`part1`, () => {
+        let result = calculatePowerConsumption(bits);
+        expect(result).toEqual(198)
+    })
+
+    describe('calculateFrequency', () => {
+        test(`it Calculates frequency`, () => {
+            let result = calculateFrequency(["0", "1", "1", "1", "1", "0", "0", "1", "1", "1", "0", "0"])
+            expect(result).toEqual({ 0: 5, 1: 7 })
+        })
     })
 })
